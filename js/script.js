@@ -13,7 +13,7 @@ else {
 
 //question 2
 
-for (i=15; i >= 25; i++) {
+for (var i=15; i <= 25; i++) {
     if (i === 17 || i=== 20) {
         console.log(i);
     }
@@ -50,14 +50,14 @@ var games = [
    
 /*    games.forEach(function(game) {
        if(game.rating && game.rating < 3.5){
-const li = document.createElement("li");
+var li = document.createElement("li");
             li.appendChild(document.createTextNode(`${game.title}  ${game.rating}`));
             ul.appendChild(li);
         }
-   }) */
+   })  */
 
 
-   var ul = document.querySelector("#games");
+   var ul = document.querySelector(".games");
    console.log(ul);
    
 
@@ -70,9 +70,9 @@ const li = document.createElement("li");
             li.appendChild(document.createTextNode (games[i].title));
             li.appendChild(document.createTextNode (games[i].rating))
             // også må jeg hekte den på ul.
-            ul.appendChild(li);
+            //ul.appendChild(li);
        }
-   }
+   } 
 
 
    //question 4
@@ -83,7 +83,7 @@ const li = document.createElement("li");
        //If the argument is a string value, 
        //log the message "I don't like " together with the argument.
        if (typeof thisILike === "string") {
-           console.log("I dont like");
+           console.log("I dont like",thisILike);
        }
    
       //If it doesn't log the message "Please send in a string".
@@ -103,7 +103,7 @@ const li = document.createElement("li");
 
    
    //Create a function that accepts two arguments.
-   function add(numb1, numb2) {
+   function subtract(numb1, numb2) {
         
         //If both arguments are number values or can be converted to number values, 
         const convertedNumb1 = parseFloat(numb1);
@@ -125,7 +125,7 @@ const li = document.createElement("li");
 //Test your function with the following value pairs: 
 //(1, 42), (200, 150), (10, "50"), ("100", "400"), 
 //("Ten", "One Hundred"), (null, 123);
-  const output = add(250,150);
+  const output = subtract(250,150);
  //and assign the return value to be the innerHTML value of the element with the id subtraction.
  document.getElementById("subtraction").innerHTML = output;
 
@@ -141,56 +141,31 @@ const li = document.createElement("li");
 
 
  //Change the title of the page, 
- const heading = document.querySelector("h1");
  //(the value of the title element in the head) to "Updated title".
-
-function changeHeading () {
-     heading.innerHTML = "Updated title";
-     
- }
-   
 //Change the background colour of the whole page to "yellow".
- function changeBackgroundColour () {
-     const body = document.querySelector("body");
-     body.style.backgroundColor = "yellow";
- }
-
-
  //Change the color of the h1 element to "green".
- const heading1= document.querySelector("h1");
-
- function changeh1Color() {
-     heading1.style.backgroundColor = "green";
-     
-    //Change the h1 element's font to "impact".
-     heading1.style.fontFamily = "impact";
-     heading.innerHTML = "YourTextHere";
-     
- }
-
-
 //Change the value of the h1 element to be a link.
-
-
  //Remove the list style and padding from the ul element.
- const listAndPadding = document.getElementById ("games");
 
- function removeListAndPadding() {
+
+function updatePage () {
+    var heading = document.querySelector("h1");
+    heading.innerHTML = "Updated title";
+    var body = document.querySelector("body");
+    body.style.backgroundColor = "yellow";
+    var heading1= document.querySelector("h1");
+    heading1.style.backgroundColor = "green";
+    heading1.style.fontFamily = "impact";
+    heading.innerHTML = "YourTextHere";
+    var listAndPadding = document.getElementById ("games");
     listAndPadding.style = "none";
-     
- }
 
+}
 
-
-
-
- buttonPage.onclick = (changeHeading,removeListAndPadding, changeBackgroundColour, changeh1Color);
+ buttonPage.onclick = (updatePage);
 
  
 
-
-
- 
 //question 7 
 
 
@@ -218,12 +193,13 @@ const toys = [
 //loop through the array below, 
 //add all the prices and assign the total to 
 //be the innerHTML value of the element with the id total.
-toys.forEach(functio(toys) {
-    if (_toys.name && toys.price) {
+toys.forEach ((toys) => { 
+    if (toys.name && toys.price) {
         const toysList = document.createElement ("price");
-        toysList.appendChild.createTextNode(`${toys.name}  ${toys.price}`);
+        toysList.appendChild.createTextNode(`${toys.name} ${toys.price}`);
 
     }
+
 })
 
 
